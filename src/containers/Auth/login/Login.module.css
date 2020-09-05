@@ -1,0 +1,108 @@
+.Login{
+    height: 100%;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(128,86,204,1) 15%, rgba(173,80,171,1) 71%, rgba(252,70,114,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Form{
+    display: flex;
+}
+
+
+.InputForm{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items:flex-start;
+    justify-content: center;
+    background-color: white;
+    padding:2rem 3rem;
+    border-radius:1rem ;
+    
+}
+
+.Logo{
+    padding-left:2rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.LoginButton{
+    margin-top: 1rem;
+    width: 7rem;
+    height: 2.5rem;
+    /* background-color:#0378FF; */
+    /* background-color:black; */
+    border:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-weight: bold;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    background-color: white;
+
+}
+.LoginButton:active,
+.LoginButton.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+
+.LoginButton:disabled{
+    cursor: not-allowed;
+}
+
+.FormSubmit{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.FormSubmit .SignUp{
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+    font-weight: 500;
+    color:blue
+}
+
+.ErrorSpan{
+    height: 1rem;
+    padding-bottom:1rem ;
+    color: red;
+    font-weight: bold;
+}
+
+
+@media(max-Width:400px){
+
+    .Login{
+        width: 100vw;
+    }
+    .Form{
+        margin:1.3rem 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .InputForm{
+        width: 95%;
+    }
+ }
+

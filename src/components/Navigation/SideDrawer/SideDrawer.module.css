@@ -1,0 +1,75 @@
+.SideDrawer {
+   position: fixed;
+   width: 100vw;
+   max-width: 50%;
+   height: 100%;
+   left:0;
+   top:0;
+   z-index: 200;
+   background-color: white;
+   padding: 32px 16px;
+   box-sizing: border-box;
+   transition: transform 0.3s ease-out;
+}
+
+@media(min-Width:700px){
+   .SideDrawer{
+      display: none;
+   }
+}
+
+.Open{
+   transform:translateX(0);
+}
+nav{
+}
+
+.Logo{
+   display: flex;
+   justify-content: center;
+   margin-left: 2rem;
+}
+
+nav ul{
+   padding:0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+
+nav ul li{
+   width: 100%;
+   height: 3rem;
+   font-weight:bold ;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;   
+   margin: 1rem 0;
+   font-size: 24px;
+}
+
+.Close{
+   transform: translateX(-100%);
+}
+.Logo{
+   margin-bottom: 32px;
+   height: 11%;
+}
+
+
+@media(max-Width:700px){
+   .SideDrawer {
+      max-width: 70%;
+      height: 100%;
+      left:0;
+      top:0;
+      z-index: 200;
+      background-color: white;
+      padding: 32px 16px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease-out;
+   }
+}

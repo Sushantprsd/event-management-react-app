@@ -1,0 +1,32 @@
+.Carousal{
+   /* margin-top: 2rem; */
+   width:100%;
+   height: 100%;
+}
+
+.CarousalItem{
+   height: 100%;
+}
+
+.CarousalItem img{
+   align-self: center;
+   height:60vh;
+}
+
+@media(max-Width:800px){
+
+   .CarousalItem img{
+      align-self: center;
+      height:50vh;
+   }
+
+}
+
+@media(max-Width:400px){
+
+   .CarousalItem img{
+      align-self: center;
+      height:40vh;
+   }
+
+}

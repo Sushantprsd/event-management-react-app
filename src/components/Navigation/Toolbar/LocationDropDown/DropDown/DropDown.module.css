@@ -1,0 +1,20 @@
+.DropDown{
+    position:absolute;
+    display: flex;
+    flex-direction:column;
+    background-color:white;
+    width:15rem;
+    height:0;
+    top: 2rem;
+    left:-2px;
+    list-style: none;
+    padding:0px;
+    border: 2px solid rgba(180, 180, 180, 0.616);
+    border-top: none;
+    /* display: none; */
+    opacity: 0;
+    transition:all .3s ease;
+
+}
+ 
+ 

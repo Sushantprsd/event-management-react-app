@@ -1,0 +1,33 @@
+.MainContainer{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows:9vh auto auto;
+    grid-template-areas:  "header"
+                          "main"
+                          "footer"
+ }
+  
+ .Header{
+    grid-area:header;
+    width: 100vw;
+    position:fixed;
+    z-index: 100;
+ }
+ 
+
+ 
+  
+ .Main{
+    /* margin-top: 30rem; */
+    margin-top: 0.1rem;
+    grid-area: main;
+    min-height: 75vh;
+
+    background-color: #dadee2;
+
+ }
+ 
+ .Footer{
+    grid-area: footer;
+ }

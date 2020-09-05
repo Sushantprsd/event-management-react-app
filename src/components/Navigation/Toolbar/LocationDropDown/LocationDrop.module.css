@@ -1,0 +1,25 @@
+.LocationDrop{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start ; 
+    box-sizing: border-box;
+    height:3rem;
+    width:15rem;
+    border: 2px solid rgba(180, 180, 180, 0.616);
+    position: relative;
+}
+
+.LocationDrop:hover{
+    cursor: pointer;
+}
+
+.LocationDropOpen ul{
+    display: block;
+    height: 200px;
+    opacity: 1;
+}
+
+.DropDown{
+    width:90%;
+    height: 100%;
+}

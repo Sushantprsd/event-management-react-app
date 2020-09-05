@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+
+
+.Footer{
+   margin-top: 2rem;
+   background: black;
+   box-shadow: rgba(0, 0, 0, 0.247) 0px 4px 12px 0.2rem;
+   width: 100%;
+   height: 9rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-weight: bold;
+   font-size: 2.3rem;
+   font-family: 'Lato', sans-serif;
+}
