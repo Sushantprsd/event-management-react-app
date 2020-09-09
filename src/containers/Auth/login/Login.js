@@ -80,7 +80,11 @@ class Login extends Component {
             ...this.state.inputForm,
         };
         const updatedFormElement = { ...updatedInputForm[inputIdentifier] };
-        updatedFormElement.value = event.target.value;
+        if (inputIdentifier === "email" || inputIdentifier === "password") {
+            updatedFormElement.value = event.target.value.trim();
+        } else {
+            updatedFormElement.value = event.target.value;
+        }
         updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
         updatedFormElement.touched = true;
         updatedInputForm[inputIdentifier] = updatedFormElement;

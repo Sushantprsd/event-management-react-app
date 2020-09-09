@@ -85,7 +85,6 @@ class AddEvent extends Component {
                         { value: "Rajasthan", displayValue: "Rajasthan" },
                         { value: "Gujrat", displayValue: "Gujrat" },
                     ],
-                    required: true,
                     placeholder: "State",
                 },
                 value: "delhi",
@@ -159,6 +158,7 @@ class AddEvent extends Component {
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
+        event.preventDefault();
         const updatedInputForm = {
             ...this.state.inputForm,
         };

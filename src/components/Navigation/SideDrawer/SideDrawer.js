@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Logo from "../../Logo/Logo";
 import classes from "./SideDrawer.module.css";
 import BackDrop from "../../UI/Backdrop/Backdrop";
-import NavIcons from "../../UI/NavIcons/NavIcons";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
@@ -12,9 +11,9 @@ class SideDrawer extends Component {
         this.props.history.push("/login");
     };
 
+
     logoutHandler = () => {
-        this.props.history.push("/");
-        this.props.logoutHandler();
+        this.props.history.push('/logout')
     };
 
     addEventHandler = () => {

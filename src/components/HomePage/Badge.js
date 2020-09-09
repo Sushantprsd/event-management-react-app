@@ -4,7 +4,7 @@ import Spinner from "../UI/Spinner/Spinner";
 import Axios from "axios";
 
 const CustomBadge = (props) => {
-    const monthNames = new Array(
+    const monthNames = [
         "January",
         "February",
         "March",
@@ -17,23 +17,26 @@ const CustomBadge = (props) => {
         "October",
         "November",
         "December",
-    );
+    ];
     const [enrolled, setEnrolled] = useState(false);
-    const [load, setLoad] = useState(false);
-
-
-    const daysNames = new Array("Mon", "Tue", "Wed", "Thus", "Fri", "Sat", "Sun");
     let date = props.event.public.date.split("-");
     let month = date[1];
-
     let registerButton = (
         <div onClick={props.enrollToEvent} className={classes.Register}>
             <span>Register</span>
         </div>
     );
+
+    if (!props.isAuthenticated) {
+        registerButton = (
+            <div onClick={props.gotToLogIn} className={classes.Register}>
+                <span>Login to Register</span>
+            </div>
+        );
+    }
     if (enrolled) {
         registerButton = (
-            <div onClick={props.enrollToEvent} className={classes.Register}>
+            <div className={classes.Register}>
                 <span>Enrolled</span>
             </div>
         );
@@ -53,9 +56,7 @@ const CustomBadge = (props) => {
             .then((response) => {
                 setEnrolled(response.data.data);
             })
-            .catch((err) => {
-               
-            });
+            .catch((err) => {});
     }
 
     return (
@@ -68,13 +69,13 @@ const CustomBadge = (props) => {
                         <h5>{props.event.public.description.toUpperCase()}</h5>
                     </div>
                 </div>
-                <img className={classes.imgContent} src={props.imageUrl} />
+                <img className={classes.imgContent} src={props.imageUrl} alt="" />
             </div>
             <div className={classes.Details}>
                 <div className={classes.Description}>
                     <div className={classes.Tittle}>
-                        <h2>{props.event.public.name}</h2>
-                        <p>{props.event.public.organizerName}</p>
+                        <h2>{props.event.public.name.toUpperCase()}</h2>
+                        <p>{props.event.public.organizerName.toUpperCase()}</p>
                     </div>
                     {registerButton}
                 </div>

@@ -7,24 +7,25 @@ import { BrowserRouter } from "react-router-dom";
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import authReducer from './store/reducer/auth/auth';
-import eventReducer from './store/reducer/event/event'
-
+import authReducer from "./store/reducer/auth/auth";
+import eventReducer from "./store/reducer/event/event";
+import ScrollToTop from "./hoc/ScrollToTop/ScrollToTop";
 
 const composeEnhancers = compose;
 // const composeEnhancer = process.env.NODE_ENV
 const rootReducer = combineReducers({
     auth: authReducer,
-    event:eventReducer,
-    // signUpForm: signUpReducer,
+    event: eventReducer,
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter >
-            <App />
+        <BrowserRouter>
+            <ScrollToTop>
+                <App />
+            </ScrollToTop>
         </BrowserRouter>
     </Provider>
 );

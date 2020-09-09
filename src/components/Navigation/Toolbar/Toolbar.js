@@ -4,7 +4,7 @@ import Logo from "../../Logo/Logo";
 import SearchBar from "../../UI/SearchBar/SearchBar";
 import NavIcons from "../../UI/NavIcons/NavIcons";
 import { NavLink, withRouter } from "react-router-dom";
-import { connect} from "react-redux";
+import { connect } from "react-redux";
 import * as actions from "../../../store/actions/index";
 import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 
@@ -14,8 +14,7 @@ class Toolbar extends Component {
     };
 
     logoutHandler = () => {
-        this.props.history.push('/')
-        this.props.logoutHandler();
+        this.props.history.push('/logout')
     };
 
     addEventHandler = () => {

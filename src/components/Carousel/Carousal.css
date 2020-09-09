@@ -10,7 +10,7 @@
 
 .CarousalItem img{
    align-self: center;
-   height:60vh;
+   height:50vh;
 }
 
 @media(max-Width:800px){

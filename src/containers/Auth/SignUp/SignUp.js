@@ -99,7 +99,11 @@ class Signup extends Component {
             ...this.state.inputForm,
         };
         const updatedFormElement = { ...updatedInputForm[inputIdentifier] };
-        updatedFormElement.value = event.target.value;
+        if (inputIdentifier === "email" || inputIdentifier === "password") {
+            updatedFormElement.value = event.target.value.trim();
+        } else {
+            updatedFormElement.value = event.target.value;
+        }
         updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
         updatedFormElement.touched = true;
         updatedInputForm[inputIdentifier] = updatedFormElement;
@@ -162,7 +166,6 @@ class Signup extends Component {
                         invalid={!formElement.config.valid}
                         shouldValidate={formElement.config.validation}
                         touched={formElement.config.touched}
-                        key={formElement.id}
                         key={formElement.id}
                         label={formElement.config.label}
                         elementType={formElement.config.elementType}

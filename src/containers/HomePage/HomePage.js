@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import classes from "./HomePage.module.css";
-import { Carousel } from "react-bootstrap";
 import CustomCarousel from "../../components/Carousel/Carousal";
 import CustomBadge from "../../components/HomePage/Badge";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import { withRouter } from "react-router-dom";
 
 class HomePage extends Component {
     componentDidMount() {
         this.props.fetchAllEvent(1);
     }
-    enrollEvent =(eventId)=>{
-        this.props.enrollToEvent(eventId)
-    }
+    enrollEvent = (eventId) => {
+        this.props.enrollToEvent(eventId);
+    };
+    gotToLogIn = () => {
+        this.props.history.push("/login");
+    };
     render() {
         let allEvents = (
             <div className={classes.Spinner}>
@@ -29,18 +32,18 @@ class HomePage extends Component {
                         <CustomCarousel />
                     </div>
                     <div className={classes.Content}>
-                    {events.map((event) => {
-
+                        {events.map((event) => {
                             return (
                                 <CustomBadge
                                     key={event._id}
-                                    id = {event._id}
-                                    imageUrl={this.props.event.ipName +"" +event.public.imageUrl}
+                                    id={event._id}
+                                    imageUrl={this.props.event.ipName + "" + event.public.imageUrl}
                                     event={event}
                                     enrollToEvent={(key) => this.enrollEvent(event._id)}
-                                    isAuthenticated ={this.props.auth.isAuthenticated}
-                                    token = {this.props.auth.token}
-                                    enrollLoading = {this.props.event.eventEnrollLoading}
+                                    isAuthenticated={this.props.auth.isAuthenticated}
+                                    token={this.props.auth.token}
+                                    enrollLoading={this.props.event.eventEnrollLoading}
+                                    gotToLogIn={this.gotToLogIn}
                                 />
                             );
                         })}
@@ -56,7 +59,7 @@ class HomePage extends Component {
 const mapStateToProps = (state) => {
     return {
         event: state.event,
-        auth:state.auth
+        auth: state.auth,
     };
 };
 
@@ -67,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomePage));

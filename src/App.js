@@ -10,6 +10,7 @@ import SignUp from "./containers/Auth/SignUp/SignUp";
 import AddEvent from "./containers/AddEvent/AddEvent";
 import EnrolledEvent from "./containers/EnrolledEvent/EnrolledEvent";
 import UserEvents from "./containers/UserEvents/UserEvents";
+import Logout from "./containers/Auth/Logout/Logout";
 
 class App extends Component {
     componentDidMount() {
@@ -28,6 +29,7 @@ class App extends Component {
         if (this.props.isAuthenticated) {
             route = (
                 <Switch>
+                    <Route path="/logout" exact component={Logout} />
                     <Route path="/my/events" exact component={UserEvents} />
                     <Route path="/event/enrolled" exact component={EnrolledEvent} />
                     <Route path="/event/add" exact component={AddEvent} />
